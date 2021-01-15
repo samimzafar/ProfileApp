@@ -1,0 +1,209 @@
+import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import { MenuItem } from "./MenuItem";
+import Scrollspy from 'react-scrollspy'
+const useStyles = makeStyles({
+    navBar:{
+        zIndex:2,
+        width:'100%',
+        display:'flex',
+        justifyContent:'space-between',
+        position:'fixed',
+        height:100,
+        top:0,
+
+    },
+    navData:{
+        backgroundColor:props=>props.backgroundColor,
+        transition:'0.3s ease-in-out',
+        width:'100%',
+        padding: '20px 100px',
+        display: 'flex',
+        alignItems: 'center',
+
+    },
+    imageClass:{
+        display:'flex',
+        flex:1,
+        '@media screen and (max-width: 768px)':{
+            justifyContent:'center'
+        },
+        '& img':{
+            width:90,
+            height:30,
+        },
+        '& img:hover':{
+            cursor:'pointer'
+        }
+    },
+    navUL:{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flex: 1,
+        '@media screen and (max-width: 768px)':{
+         position:'fixed',
+         display:'block',
+         width: '100%',
+         height: '100vh',
+         padding:0,
+         top: 100,
+         left: '-100%',
+         textAlign: 'center',
+         backgroundColor: '#23263A',
+         transition:'all .8s'
+        },
+        '& li':{
+            listStyle:'none',
+ 
+            '@media screen and (max-width: 768px)':{
+           
+            }
+        },
+        '& a':{
+            color: 'white',
+            fontSize: 18,
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            fontFamily:'monospace',
+            borderRadius:10,
+            padding:10,
+            transition:'.5s ease-out',
+            '@media screen and (max-width: 768px)':{
+                display:'block',
+                padding:15,
+                fontSize:20
+            }
+        },
+        '& a:hover':{
+            cursor:'pointer',
+            color:'white',
+            backgroundColor:'#119a94',
+            borderRadius:10,
+            
+        }
+    },
+    navIcon:{
+        '& i':{
+            color: 'white',
+            fontSize: 25,
+            display: 'none',
+        },
+
+        '@media screen and (max-width: 768px)':{
+            
+            '& i':{
+                display:'block',
+                cursor:'pointer'
+            }
+        },
+    },
+    scrollUL:{
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        '@media screen and (max-width: 768px)':{
+            flexDirection: 'column',
+            height: '70vh',
+            justifyContent: 'space-around',
+        }
+    },
+    scrollActive:{
+        backgroundColor:'#119a94', 
+        borderRadius:10,
+        display:'flex',
+        transition:'.5s ease-out'
+    }
+});
+export default function Navbar() {
+    let leftStyle = {left:0};
+    const [navbarColor, setNavbarColor] = useState(false)
+    const mapData=MenuItem.map((val,i)=>{
+        return val;
+    })
+
+    const [navLink, setNavLink] = useState(false)
+    const NavLinkListener=()=>{
+        if(window.scrollY===540)
+        {
+            setNavLink(true)
+        }
+        else{}
+    }
+
+    window.addEventListener('scroll',NavLinkListener)
+
+    const navChangeColor=()=>{
+
+        if(window.scrollY<=100)
+        {
+            setNavbarColor(true)
+        }   
+        else{
+            setNavbarColor(false)
+        }
+    }
+    
+    window.addEventListener('scroll',navChangeColor)
+
+    const props={backgroundColor: navbarColor?'#121631':'black',}
+    
+    const classes=useStyles(props);
+    
+    const [Clicked, setClicked] = useState(false);
+    const handleClick=()=>{
+        setClicked(!Clicked)      
+    }
+
+  
+    return (
+        <>
+
+            <div className={classes.navBar} id='navbar'>
+                <div className={classes.navData}>
+                    <div className={classes.imageClass}>
+                    <img src='./img/logo.png' alt='pic'/>
+                    </div>
+
+
+                     <ul className={classes.navUL} style={Clicked?leftStyle:{left:'-100%'}}>
+                     
+                     <Scrollspy items={ ['home','about','skills','portfolio','contact'] } 
+                     currentClassName={classes.scrollActive} className={classes.scrollUL}>        
+                     {/* <li>
+                     <a href='#home'  onClick={handleClick}>Home</a>
+                     </li>
+                     <li>
+                     <a href='#about' onClick={handleClick}>About</a>
+                     </li>    
+                     <li>
+                     <a href='#skills' onClick={handleClick}>Skills</a>
+                     </li>    
+                     <li>
+                     <a href='#portfolio' onClick={handleClick}>Portfolio</a>
+                     </li>    
+                     <li>
+                     <a href='#contact'  onClick={handleClick}>Contact</a>
+                     </li> */}
+                     {MenuItem.map((val)=>{
+                         return(
+                             <a href={val.path} onClick={handleClick}>{val.title}</a>
+                         )
+                     })}
+                     </Scrollspy>
+                     
+                     
+                     </ul>
+                     
+
+                    <div className={classes.navIcon}>
+                    <i className={Clicked?'fa fa-times':'fas fa-bars'} onClick={handleClick}/>
+                    </div>
+                </div>
+            </div>
+             
+        </>
+    )
+}
