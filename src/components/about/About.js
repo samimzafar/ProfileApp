@@ -152,7 +152,7 @@ export default function About() {
             
             <div className={classes.firstRowData}>
             <h1>About Me</h1>
-            <p> Are you growing your international audiences-
+            <p> Are you growing your Global audiences-
             <br/>So I am here to build your online presence with the Website.
              </p>
             <hr/>
