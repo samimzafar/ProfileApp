@@ -167,7 +167,7 @@ export default function About() {
              <div className={classes.secondRowData}>
                  <div className={classes.secondRowDataTop}>
                  <h1>Hi &nbsp;&nbsp;There&nbsp;.&nbsp;.</h1>
-                 <p>My name is <b>Camim</b>.I am FrontEnd <b>React Developer</b>.<br/>My primary focus is development of UI components and implementing them following well-known ReactJS workflows<b>Functional Components,LifeCyles,Hooks,Redux</b>.</p>
+                 <p>My name is <b>Sameem</b>.I am FrontEnd <b>React Developer</b>.<br/>My primary focus is development of UI components and implementing them following well-known ReactJS workflows<b>Functional Components,LifeCyles,Hooks,Redux</b>.</p>
 
                  </div>
                  <div className={classes.secondRowDataDown}>
