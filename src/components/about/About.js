@@ -173,7 +173,7 @@ export default function About() {
                  <div className={classes.secondRowDataDown}>
                         <div className={classes.secondRowDataDownName}>
                             <h2>Name:</h2>
-                            <p>Sameem Zafar</p>
+                            <p>Samim Zafar</p>
                         </div>
                         <div className={classes.secondRowDataDownEmail}>
                             <h2>Email:</h2>
