@@ -11,6 +11,11 @@ const useStyles=makeStyles({
         backgroundColor:'#052033',
         display:'grid',
         gridTemplateRows:'repeat(2,1fr)',
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+            paddingTop:'100vh',
+            width:'35rem'
+
+           },
         '@media screen and (min-width: 530px) and (max-width: 699px)':{
         paddingTop:'100vh'
         },

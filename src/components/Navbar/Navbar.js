@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { MenuItem } from "./MenuItem";
+import logo from '../img/logo.png';
 import Scrollspy from 'react-scrollspy'
 const useStyles = makeStyles({
     navBar:{
@@ -11,6 +12,10 @@ const useStyles = makeStyles({
         position:'fixed',
         height:100,
         top:0,
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+            height:70,
+             
+        }
 
     },
     navData:{
@@ -20,13 +25,18 @@ const useStyles = makeStyles({
         padding: '20px 100px',
         display: 'flex',
         alignItems: 'center',
+        '@media screen and (min-width: 350px) and (max-width:529)':{
+            
+
+        }
 
     },
     imageClass:{
         display:'flex',
         flex:1,
-        '@media screen and (max-width: 768px)':{
-            justifyContent:'center'
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+           justifyContent:'flex-start',
+           flex:1,
         },
         '& img':{
             width:90,
@@ -41,7 +51,20 @@ const useStyles = makeStyles({
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 1,
-        '@media screen and (max-width: 768px)':{
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+         
+            position:'fixed',
+         display:'block',
+         width: '100%',
+         height: '125vh',
+         padding:0,
+         top: 65,
+         left: '-100%',
+         textAlign: 'center',
+         backgroundColor: '#23263A',
+         transition:'all .8s'
+        },
+        '@media screen and (min-width: 530px) and (max-width: 768px)':{
          position:'fixed',
          display:'block',
          width: '100%',
@@ -164,29 +187,14 @@ export default function Navbar() {
             <div className={classes.navBar} id='navbar'>
                 <div className={classes.navData}>
                     <div className={classes.imageClass}>
-                    <img src='./img/logo.png' alt='pic'/>
+                    <img src={logo} alt='pic'/>
                     </div>
-
 
                      <ul className={classes.navUL} style={Clicked?leftStyle:{left:'-100%'}}>
                      
                      <Scrollspy items={ ['home','about','skills','portfolio','contact'] } 
                      currentClassName={classes.scrollActive} className={classes.scrollUL}>        
-                     {/* <li>
-                     <a href='#home'  onClick={handleClick}>Home</a>
-                     </li>
-                     <li>
-                     <a href='#about' onClick={handleClick}>About</a>
-                     </li>    
-                     <li>
-                     <a href='#skills' onClick={handleClick}>Skills</a>
-                     </li>    
-                     <li>
-                     <a href='#portfolio' onClick={handleClick}>Portfolio</a>
-                     </li>    
-                     <li>
-                     <a href='#contact'  onClick={handleClick}>Contact</a>
-                     </li> */}
+                     
                      {MenuItem.map((val)=>{
                          return(
                              <a href={val.path} onClick={handleClick}>{val.title}</a>

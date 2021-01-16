@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import pc from '../img/mypic.png'
 const useStyles=makeStyles({
     container:{
         width:'100%',
         height:'100vh',
         display:'grid',
         gridTemplateRows:'repeat(2,1fr)',
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+            width:'35rem',
+           },
         
         
     },
@@ -40,6 +44,10 @@ const useStyles=makeStyles({
         backgroundColor:'#102942',
         display:'grid',
         gridTemplateColumns:'repeat(2,1fr)',
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+            display:'flex',
+            flexDirection:'column'
+           },
         '@media screen and (min-width: 530px) and (max-width: 758px)':{
             display:'flex',
             flexDirection:'column'
@@ -67,6 +75,12 @@ const useStyles=makeStyles({
     },
     secondRowDataTop:{
         padding:10,
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            padding: '3rem',
+           },
         '@media screen and (min-width: 530px) and (max-width:758px)':{
             display: 'flex',
             alignItems: 'center',
@@ -162,7 +176,7 @@ export default function About() {
              
              <div className={classes.secondRow}>
              <div className={classes.secondRowPic}>
-             <img src='./img/mypic.png' alt='pic'  />
+             <img src={pc} alt='pic'  />
              </div>
              <div className={classes.secondRowData}>
                  <div className={classes.secondRowDataTop}>

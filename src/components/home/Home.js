@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from 'react-redux';
+import bkg from '../img/background.png';
+import bb from '../img/bubble.png';
 const useStyles=makeStyles({
     secBg:{
         width:'100%',
@@ -8,7 +9,11 @@ const useStyles=makeStyles({
         backgroundSize: 'cover',
         overflow: 'hidden',
         backgroundPosition: 'center',
-        backgroundImage:"url(./img/background.png)",
+        backgroundImage: `url(${bkg})`,
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+          width:'35rem',
+         },
+
 
         
     },
@@ -19,11 +24,10 @@ const useStyles=makeStyles({
         left: '8%',
         color:'#fbfcfd',
         transform: 'translateY(-50%)',
-        '@media screen and (max-width: 500px)':{
-            padding:5,
-            
-        },
-        '@media screen and (min-width: 501px) and (max-width: 757px)':{
+        '@media screen and (min-width: 350px) and (max-width: 529px)':{
+           padding:5
+         },
+        '@media screen and (min-width: 530px) and (max-width: 757px)':{
             padding:2,
             
         },
@@ -162,7 +166,7 @@ export default function Home() {
 
     return (
 
-        <div className={classes.secBg} id='home'>
+        <div className={classes.secBg} id='home' >
             {/* style={value?{display:'none'}:''} */}
             {/* className={value?{display:'none'}:`${classes.conTent}`} */}
             <div className={classes.conTent}>
@@ -172,13 +176,13 @@ export default function Home() {
             </div>
             {/* className={value?{display:'none'}:`${classes.bubblesAnime}` */}
             <div className={classes.bubblesAnime}>
-                <img src='./img/bubble.png' alt='pic' style={{width:40}}/>
-                <img src='./img/bubble.png' alt='pic' style={{width:20}}/>
-                <img src='./img/bubble.png' alt='pic' style={{width:50}}/>
-                <img src='./img/bubble.png' alt='pic' style={{width:30}}/>
-                <img src='./img/bubble.png' alt='pic' style={{width:40}}/>
-                <img src='./img/bubble.png' alt='pic' style={{width:10}}/>
-                <img src='./img/bubble.png' alt='pic' style={{width:50}}/>
+                <img src={bb} alt='pic' style={{width:40}}/>
+                <img src={bb} alt='pic' style={{width:20}}/>
+                <img src={bb} alt='pic' style={{width:50}}/>
+                <img src={bb} alt='pic' style={{width:30}}/>
+                <img src={bb} alt='pic' style={{width:40}}/>
+                <img src={bb} alt='pic' style={{width:10}}/>
+                <img src={bb} alt='pic' style={{width:50}}/>
             </div>
            
 
