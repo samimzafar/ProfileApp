@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ProfileApp/static/css/main.55f117f8.chunk.css",
+    "main.js": "/ProfileApp/static/js/main.c1aa375a.chunk.js",
+    "main.js.map": "/ProfileApp/static/js/main.c1aa375a.chunk.js.map",
+    "runtime-main.js": "/ProfileApp/static/js/runtime-main.fd94be57.js",
+    "runtime-main.js.map": "/ProfileApp/static/js/runtime-main.fd94be57.js.map",
+    "static/js/2.40f44e49.chunk.js": "/ProfileApp/static/js/2.40f44e49.chunk.js",
+    "static/js/2.40f44e49.chunk.js.map": "/ProfileApp/static/js/2.40f44e49.chunk.js.map",
+    "index.html": "/ProfileApp/index.html",
+    "static/css/main.55f117f8.chunk.css.map": "/ProfileApp/static/css/main.55f117f8.chunk.css.map",
+    "static/js/2.40f44e49.chunk.js.LICENSE.txt": "/ProfileApp/static/js/2.40f44e49.chunk.js.LICENSE.txt",
+    "static/media/background.562a615e.png": "/ProfileApp/static/media/background.562a615e.png",
+    "static/media/bubble.5abfb2f4.png": "/ProfileApp/static/media/bubble.5abfb2f4.png",
+    "static/media/logo.4434bf30.png": "/ProfileApp/static/media/logo.4434bf30.png",
+    "static/media/mypic.0b44e887.png": "/ProfileApp/static/media/mypic.0b44e887.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd94be57.js",
+    "static/js/2.40f44e49.chunk.js",
+    "static/css/main.55f117f8.chunk.css",
+    "static/js/main.c1aa375a.chunk.js"
+  ]
+}
